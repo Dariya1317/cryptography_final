@@ -174,7 +174,7 @@ public class Main extends JFrame {
                 message = cipher.encrypt(plaintext, ivRaw);
             }
 
-            outputArea.setText(message.body);
+            outputArea.setText(message.format());
             ivField.setText(message.iv);
             padField.setText(String.valueOf(message.pad));
 
