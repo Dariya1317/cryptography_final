@@ -9,8 +9,8 @@ public final class CipherMessage {
     public final String body;
 
     public CipherMessage(String iv, int pad, String body) {
-        this.iv   = normalizeIV(iv);
-        this.pad  = Math.max(0, pad);
+        this.iv = normalizeIV(iv);
+        this.pad = Math.max(0, pad);
         this.body = body == null ? "" : body;
     }
 

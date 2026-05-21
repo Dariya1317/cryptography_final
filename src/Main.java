@@ -1,33 +1,33 @@
-import javax.swing.*;
-import javax.swing.border.*;
 import java.awt.*;
 import java.awt.datatransfer.*;
 import java.io.*;
 import java.nio.file.*;
+import javax.swing.*;
+import javax.swing.border.*;
 
 public class Main extends JFrame {
 
-    private final JTextArea  inputArea    = new JTextArea(6, 40);
-    private final JTextArea  outputArea   = new JTextArea(6, 40);
-    private final JTextField keyField     = new JTextField(20);
-    private final JTextField ivField      = new JTextField(8);
-    private final JTextField padField     = new JTextField(5);
-    private final JTextArea  infoArea     = new JTextArea(7, 50);
-    private final JLabel     statusLabel  = new JLabel("  Ready");
+    private final JTextArea  inputArea = new JTextArea(6, 40);
+    private final JTextArea  outputArea = new JTextArea(6, 40);
+    private final JTextField keyField = new JTextField(20);
+    private final JTextField ivField = new JTextField(8);
+    private final JTextField padField = new JTextField(5);
+    private final JTextArea  infoArea = new JTextArea(7, 50);
+    private final JLabel     statusLabel = new JLabel("  Ready");
 
-    private static final Color BG      = new Color(15,  10,  35);
-    private static final Color PANEL   = new Color(25,  18,  55);
-    private static final Color BLUE    = new Color(60,  140, 255);
-    private static final Color VIOLET  = new Color(160, 80,  240);
-    private static final Color GREEN   = new Color(50,  210, 120);
-    private static final Color RED     = new Color(230, 60,  80);
-    private static final Color YELLOW  = new Color(240, 200, 50);
-    private static final Color TEXT    = new Color(220, 215, 245);
-    private static final Color BORDER  = new Color(60,  45,  100);
-    private static final Color MONO    = new Color(120, 220, 180);
+    private static final Color BG = new Color(15,  10,  35);
+    private static final Color PANEL = new Color(25,  18,  55);
+    private static final Color BLUE = new Color(60,  140, 255);
+    private static final Color VIOLET = new Color(160, 80,  240);
+    private static final Color GREEN = new Color(50,  210, 120);
+    private static final Color RED  = new Color(230, 60,  80);
+    private static final Color YELLOW = new Color(240, 200, 50);
+    private static final Color TEXT = new Color(220, 215, 245);
+    private static final Color BORDER = new Color(60,  45,  100);
+    private static final Color MONO = new Color(120, 220, 180);
 
     public Main() {
-        super("TRCA Cipher — Triangle Cipher Algorithm v3");
+        super("TRCA Cipher — Triangle Cipher Algorithm");
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         buildUI();
         pack();
@@ -104,12 +104,12 @@ public class Main extends JFrame {
         p.add(new JScrollPane(inputArea), g);
         g.fill=GridBagConstraints.HORIZONTAL; g.weighty=0;
 
-        JButton btnEnc   = btn("Encrypt",      GREEN);
-        JButton btnDec   = btn("Decrypt",       VIOLET);
-        JButton btnCopy  = btn("Copy output",   BLUE);
-        JButton btnFile  = btn("Load file",     YELLOW);
-        JButton btnSave  = btn("Save output",   new Color(50, 180, 130));
-        JButton btnClear = btn("Clear all",     RED);
+        JButton btnEnc = btn("Encrypt", GREEN);
+        JButton btnDec = btn("Decrypt", VIOLET);
+        JButton btnCopy = btn("Copy output", BLUE);
+        JButton btnFile = btn("Load file", YELLOW);
+        JButton btnSave = btn("Save output", new Color(50, 180, 130));
+        JButton btnClear= btn("Clear all", RED);
 
         JPanel btnPanel = new JPanel(new FlowLayout(FlowLayout.CENTER, 8, 0));
         btnPanel.setBackground(BG);
@@ -138,12 +138,12 @@ public class Main extends JFrame {
         infoArea.setEditable(false);
         p.add(new JScrollPane(infoArea), g);
 
-        btnEnc.addActionListener(e  -> doEncrypt());
-        btnDec.addActionListener(e  -> doDecrypt());
-        btnCopy.addActionListener(e -> copyOutput());
-        btnFile.addActionListener(e -> loadFile());
-        btnSave.addActionListener(e -> saveOutput());
-        btnClear.addActionListener(e -> doClear());
+        btnEnc.addActionListener(e -> doEncrypt());
+        btnDec.addActionListener(e -> doDecrypt());
+        btnCopy.addActionListener(e-> copyOutput());
+        btnFile.addActionListener(e-> loadFile());
+        btnSave.addActionListener(e-> saveOutput());
+        btnClear.addActionListener(e-> doClear());
 
         return p;
     }
