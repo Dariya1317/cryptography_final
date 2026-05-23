@@ -65,7 +65,7 @@ public class Main extends JFrame {
         JPanel p = new JPanel(new GridBagLayout());
         p.setBackground(BG);
         GridBagConstraints g = new GridBagConstraints();
-        g.insets = new Insets(4, 4, 4, 4);
+        g.insets = new Insets(5, 4, 4, 4);
         g.fill   = GridBagConstraints.HORIZONTAL;
 
         g.gridx=0; g.gridy=0; g.gridwidth=1; g.weightx=0;
