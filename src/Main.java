@@ -54,7 +54,7 @@ public class Main extends JFrame {
                 "Triangle Cipher Algorithm  v3  |  Alphabet: 95 symbols",
                 SwingConstants.CENTER);
         sub.setFont(new Font("Arial", Font.PLAIN, 12));
-        sub.setForeground(new Color(120, 100, 180));
+        sub.setForeground(new Color(100, 100, 180));
         sub.setBorder(new EmptyBorder(2, 0, 8, 0));
         p.add(title, BorderLayout.CENTER);
         p.add(sub,   BorderLayout.SOUTH);
